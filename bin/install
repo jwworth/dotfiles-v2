@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# Install homebrew packages
+brew install autojump
+brew install figlet
+brew install fzf
+brew install ripgrep
+brew install vim
