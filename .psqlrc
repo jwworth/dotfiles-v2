@@ -1,0 +1,29 @@
+--                  _
+--  _ __  ___  __ _| |_ __ ___
+-- | '_ \/ __|/ _` | | '__/ __|
+-- | |_) \__ \ (_| | | | | (__
+-- | .__/|___/\__, |_|_|  \___|
+-- |_|           |_|
+--
+-- Jake Worth's Psql Configuration
+
+-- Silence this startup
+\set QUIET on
+
+-- Set null to something that can be read
+\pset null 'ø'
+
+-- Use automatic display
+\x auto
+
+-- Show timing of queries
+\timing
+
+-- Let histories be specific to each databse
+\set HISTFILE ~/.psql_history-:DBNAME
+
+-- Ignore duplicate history entries
+\set HISTCONTROL ignoredups
+
+-- Turn up the noise after startup
+\set QUIET off
