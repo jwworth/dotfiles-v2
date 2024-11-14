@@ -1,0 +1,17 @@
+[user]
+  name = Jake Worth
+  email = jake@jakeworth.com
+
+[core]
+  editor = vim
+  excludesfile = ~/.cvsignore
+  whitespace = warn
+
+[interactive]
+  singlekey = true
+
+[github]
+  user = jwworth
+
+[init]
+  defaultBranch = main
