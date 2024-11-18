@@ -2,3 +2,6 @@
 
 # Install homebrew packages
 brew install autojump figlet fzf ripgrep vim
+
+# Symlink each dotfile
+find . -mindepth 1 -maxdepth 1 -name ".*" ! -name ".git" -exec ln -svf "$(pwd)/{}" ~ \;
