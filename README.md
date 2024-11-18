@@ -10,7 +10,7 @@ Dotmatrix][dotmatrix].
 
 ### Setup (new machine)
 
-- Install iTerm and turn on dark colors via profiles
+- Install iTerm and chose the dark background color preset for the default profile
 - Install homebrew
 - Install vim-plug
 - Authenticate with Github and clone the repo
