@@ -1,10 +1,25 @@
 call plug#begin()
 
-" List your plugins here
+" Entry point into linting tools
 Plug 'dense-analysis/ale'
+
+" Gives me many colorschemes
 Plug 'flazz/vim-colorschemes'
+
+" Fuzzy finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Distraction-free writing
 Plug 'mikewest/vimroom'
+
+" Gives me `-` to hop up to the directory listing
+Plug 'tpope/vim-vinegar'
+
+" Lets me comment with `gc`
+Plug 'tpope/vim-commentary'
+
+" The best Git plugin
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
