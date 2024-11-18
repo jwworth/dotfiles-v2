@@ -22,4 +22,10 @@ Plug 'tpope/vim-commentary'
 " The best Git plugin
 Plug 'tpope/vim-fugitive'
 
+" UNIX helpers for Vim
+Plug 'tpope/vim-eunuch'
+
+" Adds projections to my Vim
+Plug 'tpope/vim-projectionist'
+
 call plug#end()
