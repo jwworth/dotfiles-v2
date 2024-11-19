@@ -80,6 +80,11 @@ noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
 
+" Copy to system clipboard
+" Borrowed from Vim Hashrocket:
+" https://github.com/hashrocket/vim-hashrocket
+vnoremap gy "+y
+
 " Substitute the word under cursor (h/t Vidal Ekechukwu)
 vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 
