@@ -7,6 +7,9 @@
   excludesfile = ~/.cvsignore
   whitespace = warn
 
+[include]
+  path = ~/.gitconfig-private
+
 [interactive]
   singlekey = true
 
