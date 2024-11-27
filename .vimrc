@@ -101,6 +101,12 @@ nnoremap <leader>g :<C-U>execute "Rg ".expand('<cword>') \| cw<CR>
 " }}}
 
 " Filetype settings ---------------------- {{{
+augroup filetype_gitcommit
+  autocmd!
+  " Turn on spelling
+  autocmd FileType gitcommit setlocal spell
+augroup END
+
 augroup filetype_docs
   autocmd!
   " Turn off numbers
