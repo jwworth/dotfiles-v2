@@ -18,7 +18,17 @@ endif
 " ALE ---------------------- {{{
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
+\   'javascript': ['prettier'],
+\   'javascriptreact': ['prettier'],
+\   'typescript': ['prettier'],
+\   'javascript.jsx': ['prettier'],
+\   'typescriptreact': ['prettier'],
+\   'json': ['prettier'],
+\   'python': ['black']
 \}
+
+" Tell ALE to run only linters I've explicitly configured
+let g:ale_linters_explicit = 1
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
