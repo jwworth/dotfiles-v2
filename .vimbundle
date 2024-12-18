@@ -28,4 +28,7 @@ Plug 'tpope/vim-eunuch'
 " Adds projections to my Vim
 Plug 'tpope/vim-projectionist'
 
+" Adds Github Copilot
+Plug 'github/copilot.vim'
+
 call plug#end()
