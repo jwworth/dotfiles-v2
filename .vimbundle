@@ -37,4 +37,10 @@ Plug 'jlanzarotta/bufexplorer'
 " Jump to closing tags
 Plug 'adelarsq/vim-matchit'
 
+" Pairs of mappings
+Plug 'tpope/vim-unimpaired'
+
+" Send ripgrep result to quickfix
+Plug 'jremmen/vim-ripgrep'
+
 call plug#end()
