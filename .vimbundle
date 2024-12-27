@@ -31,4 +31,10 @@ Plug 'tpope/vim-projectionist'
 " Adds Github Copilot
 Plug 'github/copilot.vim'
 
+" Adds buffer commands
+Plug 'jlanzarotta/bufexplorer'
+
+" Jump to closing tags
+Plug 'adelarsq/vim-matchit'
+
 call plug#end()
