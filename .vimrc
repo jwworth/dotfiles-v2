@@ -22,6 +22,7 @@ let g:ale_fixers = {
 \   'javascriptreact': ['prettier'],
 \   'typescript': ['prettier'],
 \   'javascript.jsx': ['prettier'],
+\   'yaml': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \   'json': ['prettier'],
 \   'python': ['black']
