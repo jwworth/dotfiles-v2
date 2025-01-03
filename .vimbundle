@@ -43,4 +43,7 @@ Plug 'tpope/vim-unimpaired'
 " Send ripgrep result to quickfix
 Plug 'jremmen/vim-ripgrep'
 
+" Sensible defaults
+Plug 'tpope/vim-sensible'
+
 call plug#end()
