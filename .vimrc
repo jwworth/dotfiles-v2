@@ -20,12 +20,18 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'javascript': ['prettier'],
 \   'javascriptreact': ['prettier'],
+\   'html': ['prettier'],
 \   'typescript': ['prettier'],
 \   'javascript.jsx': ['prettier'],
 \   'yaml': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \   'json': ['prettier'],
 \   'python': ['black']
+\}
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint']
 \}
 
 " Tell ALE to run only linters I've explicitly configured
