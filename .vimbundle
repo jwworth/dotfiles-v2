@@ -46,4 +46,10 @@ Plug 'jremmen/vim-ripgrep'
 " Sensible defaults
 Plug 'tpope/vim-sensible'
 
+" TypeScript support
+Plug 'leafgarland/typescript-vim'
+
+" JSON support
+Plug 'leshill/vim-json'
+
 call plug#end()
