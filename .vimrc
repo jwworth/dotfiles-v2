@@ -17,16 +17,17 @@ endif
 
 " ALE ---------------------- {{{
 let g:ale_fixers = {
-\   'ruby': ['rubocop'],
-\   'javascript': ['prettier'],
-\   'javascriptreact': ['prettier'],
+\   'css': ['prettier'],
 \   'html': ['prettier'],
-\   'typescript': ['prettier'],
+\   'javascript': ['prettier'],
 \   'javascript.jsx': ['prettier'],
-\   'yaml': ['prettier'],
-\   'typescriptreact': ['prettier'],
+\   'javascriptreact': ['prettier'],
 \   'json': ['prettier'],
-\   'python': ['black']
+\   'python': ['black'],
+\   'ruby': ['rubocop'],
+\   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
+\   'yaml': ['prettier']
 \}
 
 let g:ale_linters = {
