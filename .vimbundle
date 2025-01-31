@@ -1,55 +1,55 @@
 call plug#begin()
 
-" Entry point into linting tools
+" Jump to matching HTML/XML tags
+Plug 'adelarsq/vim-matchit'
+
+" Linting and error checking
 Plug 'dense-analysis/ale'
-
-" Gives me many colorschemes
-Plug 'flazz/vim-colorschemes'
-
-" Fuzzy finding
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Distraction-free writing
-Plug 'mikewest/vimroom'
-
-" Gives me `-` to hop up to the directory listing
-Plug 'tpope/vim-vinegar'
-
-" Lets me comment with `gc`
-Plug 'tpope/vim-commentary'
-
-" The best Git plugin
-Plug 'tpope/vim-fugitive'
-
-" UNIX helpers for Vim
-Plug 'tpope/vim-eunuch'
-
-" Adds projections to my Vim
-Plug 'tpope/vim-projectionist'
-
-" Adds Github Copilot
-Plug 'github/copilot.vim'
 
 " Adds buffer commands
 Plug 'jlanzarotta/bufexplorer'
 
-" Jump to closing tags
-Plug 'adelarsq/vim-matchit'
+" GitHub Copilot integration
+Plug 'github/copilot.vim'
 
-" Pairs of mappings
-Plug 'tpope/vim-unimpaired'
+" Fuzzy finding with fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-" Send ripgrep result to quickfix
-Plug 'jremmen/vim-ripgrep'
+" JSON syntax support
+Plug 'leshill/vim-json'
 
-" Sensible defaults
-Plug 'tpope/vim-sensible'
-
-" TypeScript support
+" TypeScript syntax support
 Plug 'leafgarland/typescript-vim'
 
-" JSON support
-Plug 'leshill/vim-json'
+" Distraction-free writing mode
+Plug 'mikewest/vimroom'
+
+" Send ripgrep results to quickfix
+Plug 'jremmen/vim-ripgrep'
+
+" Collection of Vim color schemes
+Plug 'flazz/vim-colorschemes'
+
+" Sensible Vim defaults
+Plug 'tpope/vim-sensible'
+
+" Commenting with `gc`
+Plug 'tpope/vim-commentary'
+
+" UNIX shell commands within Vim
+Plug 'tpope/vim-eunuch'
+
+" Git integration
+Plug 'tpope/vim-fugitive'
+
+" File navigation with `-`
+Plug 'tpope/vim-vinegar'
+
+" Pairs of useful mappings
+Plug 'tpope/vim-unimpaired'
+
+" Project-specific settings
+Plug 'tpope/vim-projectionist'
 
 call plug#end()
