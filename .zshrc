@@ -87,6 +87,16 @@ unsetopt HIST_VERIFY
 alias ..='cd ..'
 # }}}
 
+# Functions ---------------------- {{{
+# Format JSON in place with jq
+prettify() {
+  local temp_file
+  temp_file=$(mktemp) &&
+    jq . < "$1" > "$temp_file" &&
+    mv -- "$temp_file" "$1"
+}
+# }}}
+
 # Autoloading ---------------------- {{{
 # Load autojump
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
