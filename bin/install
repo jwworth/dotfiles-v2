@@ -6,5 +6,9 @@ brew install autojump figlet fzf ripgrep vim tmux
 # Homebrew packages I'm testing
 brew install bat
 
+
 # Symlink each dotfile
 find . -mindepth 1 -maxdepth 1 -name ".*" ! -name ".git" -exec ln -svf "$(pwd)/{}" ~ \;
+
+# Alias-tips
+git clone https://github.com/djui/alias-tips.git ~/.zsh/alias-tips
