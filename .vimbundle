@@ -10,9 +10,6 @@ Plug 'dense-analysis/ale'
 " Adds buffer commands
 Plug 'jlanzarotta/bufexplorer'
 
-" GitHub Copilot integration
-Plug 'github/copilot.vim'
-
 " Fuzzy finding with fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
