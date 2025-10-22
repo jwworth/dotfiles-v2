@@ -10,5 +10,6 @@
 .scratch
 .sw?
 .tool-versions
+.python-version
 slurper_config.yml
 *.bak
