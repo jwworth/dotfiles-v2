@@ -50,4 +50,10 @@ Plug 'tpope/vim-unimpaired'
 " Project-specific settings
 Plug 'tpope/vim-projectionist'
 
+" Format shells
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+
+" HTML table-making support
+Plug 'godlygeek/tabular'
+
 call plug#end()
