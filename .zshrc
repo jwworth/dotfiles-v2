@@ -89,6 +89,7 @@ alias ..='cd ..'
 
 # Functions ---------------------- {{{
 # Format JSON in place with jq
+# Usage: prettify filename.json
 prettify() {
   local temp_file
   temp_file=$(mktemp) &&
