@@ -136,8 +136,9 @@ load-nvmrc() {
   fi
 }
 
+# Load NVM hooks
+autoload -U add-zsh-hook
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # Source plugins
 source ~/.zsh/alias-tips/alias-tips.plugin.zsh
