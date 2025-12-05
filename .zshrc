@@ -142,3 +142,8 @@ add-zsh-hook chpwd load-nvmrc
 
 # Source plugins
 source ~/.zsh/alias-tips/alias-tips.plugin.zsh
+
+# Load pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
