@@ -147,3 +147,8 @@ source ~/.zsh/alias-tips/alias-tips.plugin.zsh
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+# Load private ZSH settings, if present
+if [ -f ".zshrc.secret" ]; then
+  source ".zshrc.secret"
+fi
