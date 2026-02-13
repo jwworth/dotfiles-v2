@@ -74,7 +74,7 @@ set wildmode=list:longest,full
 " Vertical splits split right
 set splitright
 
-" Horitzontal splits split below
+" Horizontal splits split below
 set splitbelow
 
 " Hides buffers instead of closing them
