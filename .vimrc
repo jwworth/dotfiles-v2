@@ -134,7 +134,7 @@ augroup filetype_docs
   autocmd FileType markdown setlocal nonumber
 
   " Fix spelling
-  nnoremap gsp 1z=
+  autocmd FileType markdown nnoremap <buffer> gsp 1z=
 
   " Turn on spelling
   autocmd FileType markdown setlocal spell
