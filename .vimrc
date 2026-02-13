@@ -62,7 +62,7 @@ set number
 set visualbell
 
 " Show 7 lines below and above the cursor on vertical scrolling
-set so=7
+set scrolloff=7
 
 " Don't redraw while executing macros (perf)
 set lazyredraw
