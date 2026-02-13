@@ -81,8 +81,10 @@ set splitbelow
 set hidden
 
 " GUI settings
-set guifont=Monaco:h16
-set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
+if has('gui_running')
+  set guifont=Monaco:h16
+  set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
+endif
 
 " Set colors
 " Requires vim-colorschemes:
