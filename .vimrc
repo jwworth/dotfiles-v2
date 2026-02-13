@@ -160,6 +160,6 @@ augroup END
 augroup filetype_all
   autocmd!
   " Print something when Vim opens
-  autocmd VimEnter * :echo "Momentum > Urgency"
+  autocmd VimEnter * ++once echo "Momentum > Urgency"
 augroup END
 " }}}
