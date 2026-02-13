@@ -92,11 +92,15 @@ colorscheme PaperColor
 " }}}
 
 " Mappings ---------------------- {{{
-" Disable arrow keys (helped me learn Vim, and now I don't use them)
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
+" Disable arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " Copy to system clipboard
 " Borrowed from Vim Hashrocket:
