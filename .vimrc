@@ -122,7 +122,7 @@ nnoremap <silent> <c-p> :Files<cr>
 nnoremap <leader>g :<C-U>execute "Rg ".expand('<cword>') \| cw<CR>
 
 " Open a per-directory markdown scratchpad
-nnoremap <leader>q :execute 'tabedit ' . fnameescape(expand('~/buffer-' . fnamemodify(getcwd(), ':t') . '.md' ))<CR>
+nnoremap <leader>q :execute 'tabedit ' . fnameescape(expand('~/buffer-' . fnamemodify(getcwd(), ':t') . '.md'))<CR>
 " }}}
 
 " Filetype settings ---------------------- {{{
