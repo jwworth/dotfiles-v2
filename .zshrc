@@ -149,6 +149,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 # Load private ZSH settings, if present
-if [ -f ".zshrc.secret" ]; then
-  source ".zshrc.secret"
+if [ -f "~/.zshrc.secret" ]; then
+  source "~/.zshrc.secret"
 fi
