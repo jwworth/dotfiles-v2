@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+# Define a function for colored output (optional, for clarity)
+color_echo() {
+    # Green color
+    echo "\033[0;32m$1\033[0m"
+}
+
+color_echo "--- Starting Homebrew update ---"
+# Update Homebrew itself and its list of packages
+brew update
+
+color_echo "--- Upgrading installed packages ---"
+# Upgrade all installed formulas and casks
+brew upgrade
+
+color_echo "--- Cleaning up old versions and stale files ---"
+# Remove old versions to save disk space
+brew cleanup
+
+color_echo "--- Checking Homebrew system health ---"
+# Run doctor to check for potential issues
+brew doctor
+
+color_echo "--- Homebrew upgrade complete ---"
