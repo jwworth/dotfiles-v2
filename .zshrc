@@ -144,9 +144,11 @@ add-zsh-hook chpwd load-nvmrc
 source ~/.zsh/alias-tips/alias-tips.plugin.zsh
 
 # Load pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+if command -v pyenv >/dev/null 2>&1; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init - zsh)"
+fi
 
 # Load private ZSH settings, if present
 if [ -f "~/.zshrc.secret" ]; then
