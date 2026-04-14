@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 # Install homebrew packages
+brew update
 brew install autojump figlet fzf ripgrep vim tmux
 
 # Symlink each dotfile
