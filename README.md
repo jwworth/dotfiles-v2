@@ -10,7 +10,8 @@ Dotmatrix][dotmatrix].
 
 ### Setup (new machine)
 
-- Install iTerm and chose the dark background color preset for the default profile
+- Install iTerm and chose the dark background color preset for the default
+  profile
 - Install homebrew
 - Install vim-plug
 - Authenticate with Github and clone the repo
@@ -20,6 +21,8 @@ Then:
 ```
 ./bin/install
 ```
+
+This also creates global LLM skills symlinks via a submodule.
 
 ### License
 

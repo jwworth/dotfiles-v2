@@ -88,6 +88,33 @@ alias ..='cd ..'
 # }}}
 
 # Functions ---------------------- {{{
+# Attach to or create a tmux session. h/t Hashrocket Dotmatrix
+# Usage: mux blog
+mux() {
+  if [ -z "$1" ]; then
+    echo "Usage: mux <session-name>"
+    return 1
+  fi
+
+  local session_name="$1"
+  local code_dir="$HOME/code/$session_name"
+  local session_dir="$PWD"
+
+  if tmux has-session -t "$session_name" 2>/dev/null; then
+    tmux attach-session -t "$session_name"
+  else
+    if [ -d "$code_dir" ]; then
+      session_dir="$code_dir"
+    fi
+
+    tmux new-session -d -s "$session_name" -c "$session_dir" &&
+      tmux split-window -h -t "$session_name:0" -c "$session_dir" &&
+      tmux send-keys -t "$session_name:0.1" 'vim' C-m &&
+      tmux select-pane -t "$session_name:0.1" &&
+      tmux attach-session -t "$session_name"
+  fi
+}
+
 # Format JSON in place with jq
 # Usage: prettify filename.json
 prettify() {
@@ -96,6 +123,13 @@ prettify() {
     jq . < "$1" > "$temp_file" &&
     mv -- "$temp_file" "$1"
 }
+
+# Test that Ruby on Rails migrations work forward and backward
+# h/t Hashrocket Dotmatrix
+# usage: twiki
+twiki() {
+  bin/rails db:migrate && bin/rails db:migrate:redo
+}
 # }}}
 
 # Autoloading ---------------------- {{{
@@ -103,6 +137,7 @@ prettify() {
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 # }}}
 
+# Activate packages ---------------------- {{{
 # Load fuzzy finding
 if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
@@ -150,7 +185,11 @@ if command -v pyenv >/dev/null 2>&1; then
   eval "$(pyenv init - zsh)"
 fi
 
+# Activate Mise
+eval "$(~/.local/bin/mise activate)"
+
 # Load private ZSH settings, if present
 if [ -f "~/.zshrc.secret" ]; then
   source "~/.zshrc.secret"
 fi
+# }}}
