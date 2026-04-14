@@ -21,5 +21,7 @@ else
   echo "No project skills directory found at $skills_source_dir; skipping skills symlinks."
 fi
 
-# Alias-tips
-git clone https://github.com/djui/alias-tips.git ~/.zsh/alias-tips
+# Initialize alias-tips
+if [[ ! -d ~/.zsh/alias-tips ]]; then
+  git clone https://github.com/djui/alias-tips.git ~/.zsh/alias-tips
+fi
