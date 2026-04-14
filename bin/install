@@ -4,7 +4,21 @@
 brew install autojump figlet fzf ripgrep vim tmux
 
 # Symlink each dotfile
-find . -mindepth 1 -maxdepth 1 -name ".*" ! -name ".git" -exec ln -svf "$(pwd)/{}" ~ \;
+find . -mindepth 1 -maxdepth 1 -name ".*" ! -name ".git" ! -name ".agents" -exec ln -svf "$(pwd)/{}" ~ \;
+
+# Symlink project skills for global agent discovery
+skills_source_dir="$(pwd)/.agents/skills"
+skills_target_dir="$HOME/.agents/skills"
+mkdir -p "$skills_target_dir"
+
+if [ -d "$skills_source_dir" ]; then
+  for skill_path in "$skills_source_dir"/*; do
+    [ -e "$skill_path" ] || continue
+    ln -sfn "$skill_path" "$skills_target_dir/$(basename "$skill_path")"
+  done
+else
+  echo "No project skills directory found at $skills_source_dir; skipping skills symlinks."
+fi
 
 # Alias-tips
 git clone https://github.com/djui/alias-tips.git ~/.zsh/alias-tips

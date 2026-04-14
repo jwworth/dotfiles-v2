@@ -21,6 +21,8 @@ Then:
 ./bin/install
 ```
 
+This also creates global LLM skills symlinks.
+
 ### License
 
 These dotfiles are released under the [MIT License][mit].
