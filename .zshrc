@@ -161,3 +161,6 @@ fi
 if [ -f "~/.zshrc.secret" ]; then
   source "~/.zshrc.secret"
 fi
+
+# Activate Mise
+eval "$(~/.local/bin/mise activate)"
