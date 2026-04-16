@@ -96,6 +96,13 @@ prettify() {
     jq . < "$1" > "$temp_file" &&
     mv -- "$temp_file" "$1"
 }
+
+# Test that Ruby on Rails migrations work forward and backward
+# h/t Hashrocket Dotmatrix
+# usage: twiki
+twiki() {
+  bin/rails db:migrate && bin/rails db:migrate:redo
+}
 # }}}
 
 # Autoloading ---------------------- {{{
