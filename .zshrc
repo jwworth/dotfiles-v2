@@ -110,6 +110,7 @@ twiki() {
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 # }}}
 
+# Activate packages ---------------------- {{{
 # Load fuzzy finding
 if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
@@ -157,10 +158,11 @@ if command -v pyenv >/dev/null 2>&1; then
   eval "$(pyenv init - zsh)"
 fi
 
+# Activate Mise
+eval "$(~/.local/bin/mise activate)"
+
 # Load private ZSH settings, if present
 if [ -f "~/.zshrc.secret" ]; then
   source "~/.zshrc.secret"
 fi
-
-# Activate Mise
-eval "$(~/.local/bin/mise activate)"
+# }}}
