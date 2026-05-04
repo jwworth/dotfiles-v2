@@ -4,9 +4,14 @@
 brew update
 brew install autojump figlet fzf ripgrep vim tmux
 
-# Pull agent skills submodule
+# Pull or update agent skills submodule
 if ! git submodule status agent-skills  >/dev/null 2>&1; then
   git submodule add git@github.com:jwworth/agent-skills
+else
+  cd agent-skills
+  git checkout main
+  git pull
+  cd ..
 fi
 
 # Symlink each dotfile
