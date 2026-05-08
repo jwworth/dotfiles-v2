@@ -1,4 +1,7 @@
 #!/bin/zsh
+# Uncomment and run `zprof` to profile startup
+# More info: https://htr3n.github.io/2018/07/faster-zsh/
+# zmodload zsh/zprof
 
 # Enable emacs keybindings
 bindkey -e
@@ -16,17 +19,29 @@ export LC_CTYPE=en_US.UTF-8
 export LESS=FRX
 
 # Initialize the ZSH completion system
-autoload -U compinit; compinit
+autoload -Uz compinit
+if [[ -f ~/.zcompdump ]]; then
+  compinit -C
+else
+  compinit
+fi
 
 # Style the prompt
 autoload -Uz vcs_info
 autoload -U colors; colors
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr '*'
-zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:git*' formats "%{$fg[yellow]%}%r/%S%{$fg[white]%} %{$fg[green]%}%b%{$reset_color%}%m%u%c%{$reset_color%} "
-precmd() { vcs_info }
+zstyle ':vcs_info:*' check-for-changes false
+zstyle ':vcs_info:git*' formats "%{$fg[yellow]%}%r/%S%{$fg[white]%} %{$fg[green]%}%b%{$reset_color%} "
+
+precmd() {
+  git rev-parse --is-inside-work-tree &>/dev/null || {
+    vcs_info_msg_0_=''
+    return
+  }
+
+  vcs_info
+}
+
 setopt prompt_subst
 PROMPT='${vcs_info_msg_0_}%# '
 
@@ -148,35 +163,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Add NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Autoload .nvmrc if present
-load-nvmrc() {
-  local nvmrc_path
-  nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+  nvm "$@"
 }
-
-# Load NVM hooks
-autoload -U add-zsh-hook
-add-zsh-hook chpwd load-nvmrc
-
-# Source plugins
-source ~/.zsh/alias-tips/alias-tips.plugin.zsh
 
 # Load pyenv
 if command -v pyenv >/dev/null 2>&1; then
@@ -184,9 +175,6 @@ if command -v pyenv >/dev/null 2>&1; then
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init - zsh)"
 fi
-
-# Activate Mise
-eval "$(~/.local/bin/mise activate)"
 
 # Load private ZSH settings, if present
 if [ -f "~/.zshrc.secret" ]; then
