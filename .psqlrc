@@ -19,7 +19,7 @@
 -- Show timing of queries
 \timing
 
--- Let histories be specific to each databse
+-- Let histories be specific to each database
 \set HISTFILE ~/.psql_history-:DBNAME
 
 -- Ignore duplicate history entries
