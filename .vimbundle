@@ -62,4 +62,7 @@ Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 " HTML table-making support
 Plug 'godlygeek/tabular'
 
+" Insert mode tab-complete
+Plug 'ervandew/supertab'
+
 call plug#end()
